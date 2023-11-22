@@ -1,3 +1,4 @@
+fun <T> printArray(arr: Array<T>) = println(arr.joinToString(" "))
 
 /**
     Задание 1: Сформировать целочисленный массив A из N элементов
@@ -5,7 +6,19 @@
     Вывести массив на экран. (1 балл)
  */
 fun makeArray(): Array<Int> {
-    return arrayOf()
+    print("n = ")
+
+    val n = readln().toInt()
+
+    if (n < 0) {
+        return arrayOf()
+    }
+
+    val arr = Array(n) { readln().toInt() }
+
+    printArray(arr)
+
+    return arr
 }
 
 /**
@@ -13,14 +26,15 @@ fun makeArray(): Array<Int> {
     Использовать встроенные функции. (0.5 балла)
  */
 fun sortArrayDesc(arr: Array<Int>) {
-
+    arr.sortDescending()
+    printArray(arr)
 }
 
 // Используйте эту функцию для запуска кода
 // Раскомментируйте нужные участки в процессе реализации
 fun main() {
-//    val arr = makeArray()
-//
-//    sortArrayDesc(arr)
+    val arr = makeArray()
+
+    sortArrayDesc(arr)
 }
 
